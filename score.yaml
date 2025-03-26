@@ -11,7 +11,10 @@ containers:
       DB_PASSWORD: ${resources.db.password}
       DB_HOST: ${resources.db.host}
       DB_PORT: ${resources.db.port}
+      REDIS_ADDR: "${resources.my-redis.host}:${resources.my-redis.port},user=${resources.my-redis.username},password=${resources.my-redis.password}"
 resources:
+  my-redis:
+   type: redis
   dns:
     type: dns
   route:
